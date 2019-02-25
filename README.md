@@ -4,7 +4,7 @@ Animated plots illustrating fuzzy-set calibration in Qualitative Comparative Ana
 ## Direct calibration of fuzzy sets
 Direct calibration of fuzzy sets is useful when the base variable is continous. I use a hypothetical variable `A` here for illustrating some elements of direct calibration. 
 
-<img src="uncalibrated_static.png" width = "600" height = "600" />
+<img src="uncalibrated_static.png" width = "500" height = "500" />
 
 The variables are calibrated into fuzzy-set membership values using the default setting of a logistic link function. In the plot, the vertical lines reflect the inclusion degree membership for 
 
@@ -18,4 +18,4 @@ Each vertical line crosses a horizontal line of the same color (intersections wi
 * cross-over point: 50; 
 * full non-membership: 25
 
-<img src="direct_calibration.gif" width = "600" height = "600" />
+<img src="direct_calibration.gif" width = "500" height = "500" />
