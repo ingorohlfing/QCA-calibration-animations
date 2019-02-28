@@ -7,7 +7,7 @@ The code for producing the plots in this file is [included in this repository](h
 ### Calibration with default settings
 Direct calibration of fuzzy sets is useful when the base variable is continuous. I use a hypothetical variable `A` here for illustrating some elements of direct calibration. 
 
-<img src="uncalibrated_static.png" width = "500" height = "500" />
+<img src="figures/uncalibrated_static.png" width = "500" height = "500" />
 
 The variables are calibrated into fuzzy-set membership values using the default settings of the `calibrate()` function of the `QCA` package. They correspond to how Ragin introduces direct calibration in chapters 4 and 5 in his 2008 book. In the plot, the horizontal lines represent the three membership values and, thus, classes of cases. 
 
