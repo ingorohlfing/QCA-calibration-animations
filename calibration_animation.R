@@ -46,8 +46,8 @@ directcal <- gather(original, datatype, value, uncalibrated, calibrated)
 directcal <- directcal %>% 
   mutate(excl_hor = case_when(datatype == "calibrated" ~ 0.05), # exclusion membership
          excl_ver = case_when(datatype == "calibrated" ~ 25), # exclusion anchor
-         cross_hor = case_when(datatype == "calibrated" ~ 0.5), # cross-over membership
-         cross_ver = case_when(datatype == "calibrated" ~ 50), # cross-over anchor
+         cross_hor = case_when(datatype == "calibrated" ~ 0.5), # crossover membership
+         cross_ver = case_when(datatype == "calibrated" ~ 50), # crossover anchor
          incl_hor = case_when(datatype == "calibrated" ~ 0.95), # inclusion membership
          incl_ver = case_when(datatype == "calibrated" ~ 70)) # inclusion anchor
 
@@ -84,13 +84,13 @@ static_cal <- ggplot(data = directcal) +
 #' Meaning of horizontal lines:
 #' 
 #' * top, purple line: inclusion degree membership for `A` 
-#' * middle, blue line: cross-over point for `A`
+#' * middle, blue line: crossover point for `A`
 #' * bottom, orange line: exclusion degree membership for `A`
 #' 
 #' Meaning of vertical lines:
 #' 
 #'  * right, purple line: full membership anchor / 1-anchor at 70
-#'  * middle, blue line: cross-over anchor / 0.5-anchor at 50
+#'  * middle, blue line: crossover anchor / 0.5-anchor at 50
 #'  * left, orange line: full non-membership anchor / 0-anchor at 25
 #'
 #+ dynamic plot condition
@@ -104,7 +104,7 @@ animate(anim_cal, width = 650, height = 650)
 anim_save("figures/direct_calibration.gif")     
 
 #' ### Recalibrating anchors
-#' Calibration with different anchors for full membership, cross-over point
+#' Calibration with different anchors for full membership, crossover point
 #' and full non-membership. Specification of hypothetical, alternative anchors.
 #+ recalibrating anchors
 recalibrated <- original %>% 
@@ -201,8 +201,8 @@ anim_excl_recal <- static_excl_recal +
 animate(anim_excl_recal, width = 650, height = 650)
 anim_save("figures/excl_recalibration.gif")  
 
-#' Data preparation for alternative *cross-over* anchors.
-#+ alternative cross-over
+#' Data preparation for alternative *crossover* anchors.
+#+ alternative crossover
 cross_recal <- recalibrated %>% 
   mutate(cross_hor = 0.5,
          cross_ver = case_when(anchor == "calibrated" ~ 50,
@@ -213,7 +213,7 @@ cross_recal <- recalibrated %>%
     anchor == "crosshigher" ~ "higher 0.5-anchor",
     anchor == "crosslower" ~ "lower 0.5-anchor"))
 
-#' Static plot for three different *cross-over* anchors for animation.
+#' Static plot for three different *crossover* anchors for animation.
 #+ upper anchor static
 static_cross_recal <- ggplot(data = cross_recal) +
   geom_hline(aes(yintercept = cross_hor), color = "#56B4E9", size = 0.75) +
@@ -227,7 +227,7 @@ static_cross_recal <- ggplot(data = cross_recal) +
         axis.title = element_text(size = 16),
         axis.text = element_text(size = 16))
 
-#' Animated plot for three different *cross-over* anchors. The static, gray
+#' Animated plot for three different *crossover* anchors. The static, gray
 #' line marks the originally chosen anchor.
 #+ upper anchor animated, warning = F
 anim_cross_recal <- static_cross_recal + 
