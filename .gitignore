@@ -2,4 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-calibration_animation.R
+calibration_animation_internal.R
+README.html
+direct_calibration.gif
+uncalibrated_static.png
