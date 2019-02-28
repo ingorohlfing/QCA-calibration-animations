@@ -32,7 +32,7 @@ The next plot shows that the recalibration of the upper anchor only affects the 
 
 The gray line in this and the next two plots marks the originally chosen anchor.
 
-<img src="tree/master/figures/incl_recalibration.gif" width = "500" height = "500" />
+<img src="https://github.com/ingorohlfing/QCA-calibration-animations/tree/master/figures/incl_recalibration.gif" width = "500" height = "500" />
 
 The reverse then holds when one recalibrates the lower anchor. Now the cross-over anchor shields the members of `A` from a recalibrated lower anchor.
 
